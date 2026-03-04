@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════
+   LUMIÈRE BEAUTY — Custom Stylesheet
+   ═══════════════════════════════════════ */
+
+/* ── Scroll behavior ── */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── Navbar scroll state ── */
+#navbar {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#navbar.scrolled {
+  background: rgba(11, 9, 8, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(200, 169, 126, 0.1);
+}
+
+/* ── Hero background ── */
+.hero-bg {
+  background: 
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(139, 74, 60, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(200, 169, 126, 0.07) 0%, transparent 50%),
+    linear-gradient(180deg, #0f0d0c 0%, #140f0b 50%, #0f0d0c 100%);
+}
+
+/* ── Grain overlay ── */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ── Fade up animation ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scroll dot animation ── */
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(0.6); }
+}
+
+.scroll-dot {
+  animation: scrollPulse 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+/* ── Marquee animation ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Service card hover line ── */
+.service-card {
+  position: relative;
+}
+
+/* ── Testimonial card ── */
+.testimonial-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(200, 169, 126, 0.05);
+}
+
+/* ── Mobile menu open state ── */
+#mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* ── Hamburger open state ── */
+.hamburger-open .hamburger-line:first-child {
+  transform: rotate(45deg) translateY(8px);
+  width: 24px;
+}
+.hamburger-open .hamburger-line:last-child {
+  transform: rotate(-45deg) translateY(-8px);
+  width: 24px;
+  margin-left: 0;
+}
+
+/* ── Form input focus ── */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* ── Custom select arrow ── */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a08060' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 2rem;
+}
+
+/* ── Button loading state ── */
+#submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Smooth image loading ── */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* ── Focus accessibility ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid rgba(200, 169, 126, 0.6);
+  outline-offset: 2px;
+}
+
+/* ── Responsive nav adjustments ── */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: left;
+  }
+}
+
+/* ── Page transitions ── */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0d0c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 126, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 169, 126, 0.5);
+}
+
+/* ── Selection color ── */
+::selection {
+  background: rgba(200, 169, 126, 0.25);
+  color: #e8ddd4;
+}

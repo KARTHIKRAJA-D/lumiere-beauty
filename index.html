@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lumière Beauty — Makeup Artistry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-[#0f0d0c] text-[#e8ddd4] overflow-x-hidden">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-700 py-6 px-8 md:px-16">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#home" class="nav-link">
+        <span class="font-['Cormorant_Garamond'] text-2xl font-light tracking-[0.2em] text-[#c8a97e]">LUMIÈRE</span>
+        <span class="block text-[8px] tracking-[0.5em] font-['Jost'] font-light text-[#a08060] mt-[-4px] pl-[1px]">BEAUTY ARTISTRY</span>
+      </a>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-10">
+        <li><a href="#home" class="nav-item font-['Jost'] text-xs tracking-[0.25em] uppercase font-light text-[#c8b89a] hover:text-[#c8a97e] transition-colors duration-300">Home</a></li>
+        <li><a href="#about" class="nav-item font-['Jost'] text-xs tracking-[0.25em] uppercase font-light text-[#c8b89a] hover:text-[#c8a97e] transition-colors duration-300">About</a></li>
+        <li><a href="#services" class="nav-item font-['Jost'] text-xs tracking-[0.25em] uppercase font-light text-[#c8b89a] hover:text-[#c8a97e] transition-colors duration-300">Services</a></li>
+        <li><a href="#testimonials" class="nav-item font-['Jost'] text-xs tracking-[0.25em] uppercase font-light text-[#c8b89a] hover:text-[#c8a97e] transition-colors duration-300">Reviews</a></li>
+        <li><a href="#contact" class="border border-[#c8a97e]/40 hover:border-[#c8a97e] hover:bg-[#c8a97e]/10 px-6 py-2.5 font-['Jost'] text-xs tracking-[0.25em] uppercase font-light text-[#c8a97e] transition-all duration-300">Book Now</a></li>
+      </ul>
+      <!-- Hamburger -->
+      <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] cursor-pointer z-50" aria-label="Menu">
+        <span class="hamburger-line w-6 h-[1px] bg-[#c8a97e] transition-all duration-300 origin-center"></span>
+        <span class="hamburger-line w-4 h-[1px] bg-[#c8a97e] transition-all duration-300 ml-auto"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0a0806]/97 backdrop-blur-sm flex flex-col items-center justify-center translate-x-full transition-transform duration-500">
+    <ul class="flex flex-col items-center gap-10 text-center">
+      <li><a href="#home" class="mobile-nav font-['Cormorant_Garamond'] text-4xl font-light italic text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">Home</a></li>
+      <li><a href="#about" class="mobile-nav font-['Cormorant_Garamond'] text-4xl font-light italic text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">About</a></li>
+      <li><a href="#services" class="mobile-nav font-['Cormorant_Garamond'] text-4xl font-light italic text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">Services</a></li>
+      <li><a href="#testimonials" class="mobile-nav font-['Cormorant_Garamond'] text-4xl font-light italic text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">Reviews</a></li>
+      <li><a href="#contact" class="mobile-nav font-['Jost'] text-sm tracking-[0.3em] uppercase font-light border border-[#c8a97e]/50 px-10 py-3 text-[#c8a97e] hover:bg-[#c8a97e]/10 transition-all">Book Now</a></li>
+    </ul>
+    <div class="absolute bottom-12 flex gap-6">
+      <a href="#" class="text-[#a08060] hover:text-[#c8a97e] transition-colors font-['Jost'] text-[10px] tracking-[0.3em]">INSTAGRAM</a>
+      <span class="text-[#a08060]">·</span>
+      <a href="#" class="text-[#a08060] hover:text-[#c8a97e] transition-colors font-['Jost'] text-[10px] tracking-[0.3em]">PINTEREST</a>
+      <span class="text-[#a08060]">·</span>
+      <a href="#" class="text-[#a08060] hover:text-[#c8a97e] transition-colors font-['Jost'] text-[10px] tracking-[0.3em]">TIKTOK</a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Gradient background -->
+    <div class="absolute inset-0 hero-bg"></div>
+    <!-- Decorative orbs -->
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[#c8a97e]/5 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/3 left-1/6 w-64 h-64 rounded-full bg-[#8b4a3c]/8 blur-[100px] pointer-events-none"></div>
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 grain-overlay opacity-30 pointer-events-none"></div>
+    <!-- Vertical text decoration -->
+    <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 rotate-90 origin-center">
+      <span class="font-['Jost'] text-[9px] tracking-[0.5em] text-[#a08060]/60 uppercase">Scroll</span>
+      <span class="w-12 h-[1px] bg-[#a08060]/40"></span>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-8 md:px-16 pt-32 pb-20 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="hero-content">
+        <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase mb-6 fade-up" style="animation-delay:0.2s">New York City · Est. 2016</p>
+        <h1 class="font-['Cormorant_Garamond'] font-light leading-[0.9] mb-8 fade-up" style="animation-delay:0.4s">
+          <span class="block text-[clamp(60px,10vw,110px)] text-[#e8ddd4]">The Art</span>
+          <span class="block text-[clamp(60px,10vw,110px)] italic text-[#c8a97e] ml-4 md:ml-8">of Beauty</span>
+        </h1>
+        <p class="font-['Jost'] font-light text-[#a89880] text-sm leading-relaxed tracking-wide max-w-md mb-10 fade-up" style="animation-delay:0.6s">
+          Where technique meets artistry. Transformative makeup for brides, editorials, and every moment that deserves to be remembered.
+        </p>
+        <div class="flex flex-wrap gap-4 fade-up" style="animation-delay:0.8s">
+          <a href="#contact" class="group relative overflow-hidden bg-[#c8a97e] text-[#0f0d0c] font-['Jost'] text-xs tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300 hover:bg-[#e8c89e]">
+            Book a Consultation
+          </a>
+          <a href="#services" class="font-['Jost'] text-xs tracking-[0.3em] uppercase text-[#c8b89a] border-b border-[#c8a97e]/40 pb-1 hover:border-[#c8a97e] hover:text-[#c8a97e] transition-all duration-300 flex items-center gap-2 self-end">
+            View Services <span class="text-lg leading-none">→</span>
+          </a>
+        </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 mt-16 pt-12 border-t border-[#c8a97e]/15 fade-up" style="animation-delay:1s">
+          <div>
+            <p class="font-['Cormorant_Garamond'] text-4xl font-light text-[#c8a97e]">500+</p>
+            <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mt-1">Brides</p>
+          </div>
+          <div>
+            <p class="font-['Cormorant_Garamond'] text-4xl font-light text-[#c8a97e]">8+</p>
+            <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mt-1">Years</p>
+          </div>
+          <div>
+            <p class="font-['Cormorant_Garamond'] text-4xl font-light text-[#c8a97e]">100%</p>
+            <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mt-1">Satisfaction</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Image Mosaic -->
+      <div class="hidden lg:grid grid-cols-2 gap-3 fade-up" style="animation-delay:0.5s">
+        <div class="space-y-3">
+          <div class="h-72 rounded-sm overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#c8a97e]/20 to-[#2a1810]/80 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=500&fit=crop&crop=face" alt="Bride makeup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+          <div class="h-40 rounded-sm overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#8b4a3c]/20 to-[#2a1810]/60 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=300&fit=crop" alt="Makeup tools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+        </div>
+        <div class="space-y-3 mt-8">
+          <div class="h-40 rounded-sm overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#c8a97e]/10 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=300&fit=crop" alt="Beauty detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+          <div class="h-72 rounded-sm overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-tl from-[#c8a97e]/20 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=500&fit=crop&crop=face" alt="Glamour look" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <div class="scroll-dot w-[1px] h-12 bg-gradient-to-b from-[#c8a97e]/60 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="py-5 border-y border-[#c8a97e]/10 overflow-hidden bg-[#110e0c]">
+    <div class="marquee-track flex gap-12 whitespace-nowrap">
+      <div class="flex gap-12 shrink-0">
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Bridal</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Editorial</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Film & TV</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Special Events</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Runway</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Portrait Sessions</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Airbrush</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+      </div>
+      <div class="flex gap-12 shrink-0" aria-hidden="true">
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Bridal</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Editorial</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Film & TV</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Special Events</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Runway</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Portrait Sessions</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+        <span class="font-['Cormorant_Garamond'] italic text-[#a08060]/50 text-xl">Airbrush</span>
+        <span class="text-[#c8a97e]/20 mt-1">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="py-32 px-8 md:px-16 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#c8a97e]/3 blur-[150px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <!-- Image composition -->
+        <div class="relative reveal">
+          <div class="relative z-10">
+            <div class="aspect-[3/4] rounded-sm overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=800&fit=crop&crop=face" alt="Sofia Laurent - Makeup Artist" class="w-full h-full object-cover"/>
+            </div>
+          </div>
+          <!-- Floating accent card -->
+          <div class="absolute -right-6 bottom-16 z-20 bg-[#1a1410] border border-[#c8a97e]/20 p-6 max-w-[200px] shadow-2xl hidden md:block">
+            <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e] leading-none">8+</p>
+            <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mt-2">Years of luxury artistry</p>
+          </div>
+          <!-- Gold line accent -->
+          <div class="absolute -left-4 top-12 w-[1px] h-32 bg-gradient-to-b from-transparent via-[#c8a97e]/50 to-transparent hidden md:block"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="reveal" style="animation-delay:0.2s">
+          <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase mb-4">About the Artist</p>
+          <h2 class="font-['Cormorant_Garamond'] font-light text-[clamp(40px,6vw,72px)] leading-[0.95] mb-6 text-[#e8ddd4]">
+            Sofia<br/><em class="text-[#c8a97e]">Laurent</em>
+          </h2>
+          <div class="w-12 h-[1px] bg-[#c8a97e]/50 mb-8"></div>
+          <p class="font-['Jost'] font-light text-[#a89880] text-sm leading-relaxed mb-6">
+            With over eight years perfecting the craft in New York's most demanding environments — from runway shows during Fashion Week to intimate bridal suites — Sofia Laurent has earned her reputation as one of the city's most sought-after makeup artists.
+          </p>
+          <p class="font-['Jost'] font-light text-[#a89880] text-sm leading-relaxed mb-10">
+            Trained at the prestigious Christine Valmy International School and certified in airbrush techniques, Sofia believes every face is a canvas with its own story. Her philosophy is simple: enhance, never mask. The result is always you — only luminous.
+          </p>
+
+          <!-- Credentials -->
+          <div class="grid grid-cols-2 gap-4 mb-10">
+            <div class="border-l border-[#c8a97e]/30 pl-4">
+              <p class="font-['Jost'] text-[10px] tracking-[0.3em] text-[#c8a97e] uppercase mb-1">Trained At</p>
+              <p class="font-['Cormorant_Garamond'] italic text-[#e8ddd4] text-base">Christine Valmy International</p>
+            </div>
+            <div class="border-l border-[#c8a97e]/30 pl-4">
+              <p class="font-['Jost'] text-[10px] tracking-[0.3em] text-[#c8a97e] uppercase mb-1">Featured In</p>
+              <p class="font-['Cormorant_Garamond'] italic text-[#e8ddd4] text-base">Vogue, Harper's Bazaar</p>
+            </div>
+            <div class="border-l border-[#c8a97e]/30 pl-4">
+              <p class="font-['Jost'] text-[10px] tracking-[0.3em] text-[#c8a97e] uppercase mb-1">Specialty</p>
+              <p class="font-['Cormorant_Garamond'] italic text-[#e8ddd4] text-base">Bridal & Editorial</p>
+            </div>
+            <div class="border-l border-[#c8a97e]/30 pl-4">
+              <p class="font-['Jost'] text-[10px] tracking-[0.3em] text-[#c8a97e] uppercase mb-1">Travel</p>
+              <p class="font-['Cormorant_Garamond'] italic text-[#e8ddd4] text-base">Available Worldwide</p>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-flex items-center gap-3 font-['Jost'] text-xs tracking-[0.3em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/40 pb-1 hover:border-[#c8a97e] transition-all group">
+            Work With Sofia <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="py-32 px-8 md:px-16 bg-[#0c0a09] relative">
+    <div class="absolute inset-0 grain-overlay opacity-20 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-20 reveal">
+        <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase mb-4">What We Offer</p>
+        <h2 class="font-['Cormorant_Garamond'] font-light text-[clamp(40px,6vw,72px)] leading-[0.95] text-[#e8ddd4]">
+          Our <em class="text-[#c8a97e]">Services</em>
+        </h2>
+        <div class="w-12 h-[1px] bg-[#c8a97e]/50 mx-auto mt-6"></div>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="service-card group relative border border-[#c8a97e]/10 hover:border-[#c8a97e]/40 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.1s">
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e]/0 to-transparent group-hover:via-[#c8a97e]/60 transition-all duration-700"></div>
+          <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/10 group-hover:text-[#c8a97e]/20 transition-colors duration-500 leading-none block mb-4">01</span>
+          <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Bridal <em class="text-[#c8a97e]">Artistry</em></h3>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-6">Your most photographed day deserves flawless, long-lasting beauty. From trial to ceremony, Sofia creates looks that evolve beautifully through every lighting condition.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Bridal Trial Session</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Day-of Bridal Application</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Bridal Party Packages</li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase">Starting at</p>
+              <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e]">$350</p>
+            </div>
+            <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/30 hover:border-[#c8a97e] transition-all pb-0.5">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Card 2 - Featured -->
+        <div class="service-card group relative border border-[#c8a97e]/30 bg-gradient-to-b from-[#1e1610] to-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.2s">
+          <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e] to-transparent"></div>
+          <div class="absolute top-4 right-4">
+            <span class="font-['Jost'] text-[8px] tracking-[0.3em] uppercase text-[#0f0d0c] bg-[#c8a97e] px-3 py-1">Popular</span>
+          </div>
+          <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/20 leading-none block mb-4">02</span>
+          <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Editorial <em class="text-[#c8a97e]">& Film</em></h3>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-6">Camera-ready artistry that photographs beautifully. For fashion editorials, brand campaigns, music videos, and commercial productions.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Photoshoot Makeup</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Film & TV Production</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Fashion Week Runway</li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase">Starting at</p>
+              <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e]">$250</p>
+            </div>
+            <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/30 hover:border-[#c8a97e] transition-all pb-0.5">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card group relative border border-[#c8a97e]/10 hover:border-[#c8a97e]/40 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.3s">
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e]/0 to-transparent group-hover:via-[#c8a97e]/60 transition-all duration-700"></div>
+          <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/10 group-hover:text-[#c8a97e]/20 transition-colors duration-500 leading-none block mb-4">03</span>
+          <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Special <em class="text-[#c8a97e]">Events</em></h3>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-6">Galas, proms, birthday celebrations, and milestone moments. Look and feel extraordinary for every occasion that deserves more than the ordinary.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Evening & Gala Makeup</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Prom & Formal Events</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Birthday Glam Sessions</li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase">Starting at</p>
+              <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e]">$150</p>
+            </div>
+            <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/30 hover:border-[#c8a97e] transition-all pb-0.5">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card group relative border border-[#c8a97e]/10 hover:border-[#c8a97e]/40 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.4s">
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e]/0 to-transparent group-hover:via-[#c8a97e]/60 transition-all duration-700"></div>
+          <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/10 group-hover:text-[#c8a97e]/20 transition-colors duration-500 leading-none block mb-4">04</span>
+          <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Airbrush <em class="text-[#c8a97e]">Artistry</em></h3>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-6">The gold standard for flawless, photograph-perfect skin. Ultra-lightweight formula that feels like nothing, looks like perfection, and lasts all day and night.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Airbrush Foundation</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Full Airbrush Look</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Body Airbrush</li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase">Add-on from</p>
+              <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e]">$75</p>
+            </div>
+            <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/30 hover:border-[#c8a97e] transition-all pb-0.5">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card group relative border border-[#c8a97e]/10 hover:border-[#c8a97e]/40 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.5s">
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e]/0 to-transparent group-hover:via-[#c8a97e]/60 transition-all duration-700"></div>
+          <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/10 group-hover:text-[#c8a97e]/20 transition-colors duration-500 leading-none block mb-4">05</span>
+          <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Makeup <em class="text-[#c8a97e]">Lessons</em></h3>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-6">Learn the professional techniques behind luminous skin and eye-catching looks. Personalized one-on-one sessions tailored to your unique features and lifestyle.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>1-on-1 Private Lesson</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Product Consultation</li>
+            <li class="flex items-center gap-3 font-['Jost'] text-xs text-[#a08060]"><span class="w-4 h-[1px] bg-[#c8a97e]/50"></span>Skincare Prep Routine</li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase">Starting at</p>
+              <p class="font-['Cormorant_Garamond'] text-3xl font-light text-[#c8a97e]">$200</p>
+            </div>
+            <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] border-b border-[#c8a97e]/30 hover:border-[#c8a97e] transition-all pb-0.5">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Card 6 - Custom -->
+        <div class="service-card group relative overflow-hidden bg-gradient-to-br from-[#c8a97e]/15 via-[#1a1410] to-[#8b4a3c]/10 border border-[#c8a97e]/30 p-8 transition-all duration-500 reveal" style="animation-delay:0.6s">
+          <div class="absolute inset-0 flex items-center justify-center opacity-5">
+            <span class="font-['Cormorant_Garamond'] text-[200px] font-light text-[#c8a97e] leading-none">✦</span>
+          </div>
+          <div class="relative z-10">
+            <span class="font-['Cormorant_Garamond'] text-6xl font-light text-[#c8a97e]/25 leading-none block mb-4">06</span>
+            <h3 class="font-['Cormorant_Garamond'] text-3xl font-light text-[#e8ddd4] mb-4">Custom <em class="text-[#c8a97e]">Packages</em></h3>
+            <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-8">Planning something extraordinary? Sofia offers bespoke packages for destination weddings, multi-day productions, and luxury group bookings. Let's design your perfect service.</p>
+            <a href="#contact" class="inline-flex items-center gap-3 font-['Jost'] text-xs tracking-[0.3em] uppercase text-[#c8a97e] border border-[#c8a97e]/40 hover:bg-[#c8a97e]/10 hover:border-[#c8a97e] px-6 py-3 transition-all duration-300 group">
+              Get a Custom Quote <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS STRIP ═══ -->
+  <section class="py-24 px-8 md:px-16 border-y border-[#c8a97e]/10">
+    <div class="max-w-7xl mx-auto">
+      <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase text-center mb-16 reveal">The Process</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+        <div class="text-center group">
+          <div class="w-14 h-14 rounded-full border border-[#c8a97e]/30 group-hover:border-[#c8a97e] flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-[#c8a97e]/10">
+            <span class="font-['Cormorant_Garamond'] text-xl font-light text-[#c8a97e]">1</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-xl text-[#e8ddd4] mb-2">Inquiry</p>
+          <p class="font-['Jost'] text-[10px] text-[#8a7a6a] tracking-wide leading-relaxed">Reach out via the contact form or phone</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 rounded-full border border-[#c8a97e]/30 group-hover:border-[#c8a97e] flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-[#c8a97e]/10">
+            <span class="font-['Cormorant_Garamond'] text-xl font-light text-[#c8a97e]">2</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-xl text-[#e8ddd4] mb-2">Consultation</p>
+          <p class="font-['Jost'] text-[10px] text-[#8a7a6a] tracking-wide leading-relaxed">Discuss your vision, needs, and aesthetic goals</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 rounded-full border border-[#c8a97e]/30 group-hover:border-[#c8a97e] flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-[#c8a97e]/10">
+            <span class="font-['Cormorant_Garamond'] text-xl font-light text-[#c8a97e]">3</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-xl text-[#e8ddd4] mb-2">Trial Run</p>
+          <p class="font-['Jost'] text-[10px] text-[#8a7a6a] tracking-wide leading-relaxed">Perfect the look before the big moment</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 rounded-full border border-[#c8a97e]/30 group-hover:border-[#c8a97e] flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-[#c8a97e]/10">
+            <span class="font-['Cormorant_Garamond'] text-xl font-light text-[#c8a97e]">4</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-xl text-[#e8ddd4] mb-2">Your Day</p>
+          <p class="font-['Jost'] text-[10px] text-[#8a7a6a] tracking-wide leading-relaxed">Sofia arrives, transforms, and you radiate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section id="testimonials" class="py-32 px-8 md:px-16 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vh] bg-[#c8a97e]/3 blur-[150px] pointer-events-none rounded-full"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+        <div>
+          <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase mb-4">Client Stories</p>
+          <h2 class="font-['Cormorant_Garamond'] font-light text-[clamp(40px,6vw,72px)] leading-[0.95] text-[#e8ddd4]">
+            What They <em class="text-[#c8a97e]">Say</em>
+          </h2>
+        </div>
+        <div class="flex gap-1 mt-6 md:mt-0">
+          <span class="text-[#c8a97e]">★★★★★</span>
+          <span class="font-['Jost'] text-xs text-[#a08060] ml-2 self-end pb-0.5">5.0 · 120+ reviews</span>
+        </div>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="testimonial-card border border-[#c8a97e]/10 hover:border-[#c8a97e]/30 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.1s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "Sofia transformed me into the most radiant version of myself. My wedding photos are breathtaking. Every guest asked who did my makeup — I've sent so many referrals her way."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face" alt="Isabelle M." class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">Isabelle M.</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Bride · September 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card border border-[#c8a97e]/10 hover:border-[#c8a97e]/30 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.2s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "As a photographer, I've worked with many makeup artists. Sofia is in a league of her own. She understands how makeup reads on camera — the results are consistently stunning."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" alt="Marcus Chen" class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">Marcus Chen</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Fashion Photographer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card border border-[#c8a97e]/30 bg-gradient-to-b from-[#1e1610] to-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.3s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "The makeup lesson was worth every penny. Sofia taught me techniques I'd been trying to figure out for years. I look like I have a professional do my makeup every morning now."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=60&h=60&fit=crop&crop=face" alt="Amara Johnson" class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">Amara Johnson</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Private Client · 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card border border-[#c8a97e]/10 hover:border-[#c8a97e]/30 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.4s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "Sofia did makeup for our entire bridal party of seven. She was so organized, calm, and fast — everyone was ready on time and we all looked cohesive but uniquely beautiful."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=60&h=60&fit=crop&crop=face" alt="Claire Fontaine" class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">Claire Fontaine</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Bride · June 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card border border-[#c8a97e]/10 hover:border-[#c8a97e]/30 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.5s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "I was nervous about heavy makeup, but Sofia listened to every concern and created the most natural-looking glamour look. I felt like myself, only absolutely magnificent."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=60&h=60&fit=crop&crop=face" alt="Natalie Rhodes" class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">Natalie Rhodes</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Gala Event · 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card border border-[#c8a97e]/10 hover:border-[#c8a97e]/30 bg-[#110e0c] p-8 transition-all duration-500 reveal" style="animation-delay:0.6s">
+          <div class="flex gap-0.5 mb-6">
+            <span class="text-[#c8a97e] text-xs">★★★★★</span>
+          </div>
+          <p class="font-['Cormorant_Garamond'] italic text-[#c8b89a] text-xl leading-relaxed mb-8">
+            "Hired Sofia for my fragrance brand's editorial campaign. She created three completely different looks in one day — all magazine-worthy. An absolute professional in every way."
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-[#c8a97e]/10">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="David Laurent" class="w-10 h-10 rounded-full object-cover"/>
+            <div>
+              <p class="font-['Jost'] text-xs tracking-wide text-[#e8ddd4]">David Laurent</p>
+              <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#a08060] uppercase">Brand Director</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="py-32 px-8 md:px-16 bg-[#0c0a09] relative overflow-hidden">
+    <div class="absolute inset-0 grain-overlay opacity-20 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-48 bg-[#c8a97e]/5 blur-[100px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-20">
+
+        <!-- Left info -->
+        <div class="reveal">
+          <p class="font-['Jost'] text-[10px] tracking-[0.6em] text-[#c8a97e] uppercase mb-4">Get In Touch</p>
+          <h2 class="font-['Cormorant_Garamond'] font-light text-[clamp(40px,6vw,72px)] leading-[0.95] text-[#e8ddd4] mb-8">
+            Let's Create<br/><em class="text-[#c8a97e]">Something</em><br/>Beautiful
+          </h2>
+          <p class="font-['Jost'] font-light text-[#8a7a6a] text-sm leading-relaxed mb-12 max-w-sm">
+            Whether it's your wedding day or a Tuesday shoot, Sofia would love to hear from you. Fill out the form or reach out directly.
+          </p>
+
+          <!-- Contact Details -->
+          <div class="space-y-6 mb-12">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 border border-[#c8a97e]/30 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mb-1">Email</p>
+                <a href="mailto:hello@lumierebeauty.com" class="font-['Cormorant_Garamond'] text-lg text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">hello@lumierebeauty.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 border border-[#c8a97e]/30 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mb-1">Phone</p>
+                <a href="tel:+12125550142" class="font-['Cormorant_Garamond'] text-lg text-[#e8ddd4] hover:text-[#c8a97e] transition-colors">+1 (212) 555–0142</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 border border-[#c8a97e]/30 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="font-['Jost'] text-[9px] tracking-[0.3em] text-[#a08060] uppercase mb-1">Studio</p>
+                <p class="font-['Cormorant_Garamond'] text-lg text-[#e8ddd4]">SoHo, New York City</p>
+                <p class="font-['Jost'] text-[10px] text-[#a08060] mt-0.5">On-location & in-studio available</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex gap-6">
+            <a href="#" class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] hover:text-[#c8a97e] transition-colors border-b border-[#a08060]/30 hover:border-[#c8a97e]/60 pb-0.5">Instagram</a>
+            <a href="#" class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] hover:text-[#c8a97e] transition-colors border-b border-[#a08060]/30 hover:border-[#c8a97e]/60 pb-0.5">Pinterest</a>
+            <a href="#" class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] hover:text-[#c8a97e] transition-colors border-b border-[#a08060]/30 hover:border-[#c8a97e]/60 pb-0.5">TikTok</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal" style="animation-delay:0.2s">
+          <div class="border border-[#c8a97e]/15 bg-[#110e0c] p-8 md:p-10">
+            <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c8a97e]/40 to-transparent" style="position:relative"></div>
+            <form id="contact-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="form-group">
+                  <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">First Name</label>
+                  <input type="text" name="first_name" required placeholder="Sophia"
+                    class="w-full bg-transparent border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#e8ddd4] placeholder-[#6a5a4a] outline-none transition-colors duration-300"/>
+                </div>
+                <div class="form-group">
+                  <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">Last Name</label>
+                  <input type="text" name="last_name" required placeholder="Williams"
+                    class="w-full bg-transparent border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#e8ddd4] placeholder-[#6a5a4a] outline-none transition-colors duration-300"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">Email Address</label>
+                <input type="email" name="email" required placeholder="sophia@email.com"
+                  class="w-full bg-transparent border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#e8ddd4] placeholder-[#6a5a4a] outline-none transition-colors duration-300"/>
+              </div>
+              <div class="form-group">
+                <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">Service Interest</label>
+                <select name="service" class="w-full bg-[#110e0c] border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#8a7a6a] outline-none transition-colors duration-300 cursor-pointer appearance-none">
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="bridal">Bridal Artistry</option>
+                  <option value="editorial">Editorial & Film</option>
+                  <option value="events">Special Events</option>
+                  <option value="airbrush">Airbrush Artistry</option>
+                  <option value="lessons">Makeup Lessons</option>
+                  <option value="custom">Custom Package</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">Event Date</label>
+                <input type="date" name="event_date"
+                  class="w-full bg-transparent border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#8a7a6a] outline-none transition-colors duration-300 [color-scheme:dark]"/>
+              </div>
+              <div class="form-group">
+                <label class="font-['Jost'] text-[9px] tracking-[0.3em] uppercase text-[#a08060] block mb-2">Message</label>
+                <textarea name="message" rows="4" placeholder="Tell Sofia about your vision, event details, or any questions..."
+                  class="w-full bg-transparent border-b border-[#c8a97e]/20 focus:border-[#c8a97e]/60 py-3 font-['Jost'] text-sm text-[#e8ddd4] placeholder-[#6a5a4a] outline-none transition-colors duration-300 resize-none"></textarea>
+              </div>
+              <button type="submit" id="submit-btn" class="w-full bg-[#c8a97e] text-[#0f0d0c] font-['Jost'] text-xs tracking-[0.3em] uppercase py-4 hover:bg-[#e8c89e] transition-colors duration-300 relative overflow-hidden group">
+                <span id="btn-text">Send Inquiry</span>
+              </button>
+              <p id="form-success" class="hidden text-center font-['Cormorant_Garamond'] italic text-[#c8a97e] text-lg">✦ Thank you — Sofia will be in touch within 24 hours.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="py-12 px-8 md:px-16 border-t border-[#c8a97e]/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <span class="font-['Cormorant_Garamond'] text-xl font-light tracking-[0.2em] text-[#c8a97e]">LUMIÈRE</span>
+        <p class="font-['Jost'] text-[9px] tracking-[0.4em] text-[#a08060] uppercase mt-1">Beauty Artistry · New York City</p>
+      </div>
+      <div class="flex gap-8">
+        <a href="#home" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#8a7a6a] hover:text-[#c8a97e] transition-colors">Home</a>
+        <a href="#about" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#8a7a6a] hover:text-[#c8a97e] transition-colors">About</a>
+        <a href="#services" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#8a7a6a] hover:text-[#c8a97e] transition-colors">Services</a>
+        <a href="#contact" class="font-['Jost'] text-[9px] tracking-[0.25em] uppercase text-[#8a7a6a] hover:text-[#c8a97e] transition-colors">Contact</a>
+      </div>
+      <p class="font-['Jost'] text-[9px] tracking-[0.2em] text-[#6a5a4a]">© 2026 Lumière Beauty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
